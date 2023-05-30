@@ -1,5 +1,5 @@
 from celery import Celery
-from config_celery import Config
+from async_tasks.config_celery import Config
 
 
 
