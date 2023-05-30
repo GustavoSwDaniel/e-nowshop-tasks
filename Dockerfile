@@ -11,7 +11,7 @@ RUN apt-get -y update && \
 
 WORKDIR /usr/async_tasks
 
-COPY ./async_tasks .
+COPY . .
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt --trusted-host 44.211.201.219
