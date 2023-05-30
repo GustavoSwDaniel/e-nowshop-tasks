@@ -7,7 +7,7 @@ HERE = pathlib.Path(__file__).parent
 
 README = (HERE / "README.md").read_text()
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 DESCRIPTION = 'e-nowshop-tasks'
 LONG_DESCRIPTION = 'Package to manage tasks of e-nowshop'
 #
