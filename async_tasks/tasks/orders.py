@@ -1,8 +1,8 @@
 import logging
-from app import app
+from celery_app import app
 import time
 import requests
-from config import Config
+from config_celery import Config
 logger = logging.getLogger(__name__)
 
 

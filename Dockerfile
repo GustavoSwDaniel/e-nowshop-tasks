@@ -15,5 +15,5 @@ COPY ./async_tasks .
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt --trusted-host 44.211.201.219
-CMD [ "celery", "-A", "tasks.orders", "worker", "--loglevel=info" ]
+CMD [ "celery", "-A", "async_tasks.tasks.orders", "worker", "--loglevel=info" ]
 

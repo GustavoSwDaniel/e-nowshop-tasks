@@ -1,5 +1,7 @@
 from celery import Celery
-from config import Config
+from config_celery import Config
+
+
 
 app = Celery('tasks', broker=Config.REDIS_HOST)
 
