@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enowshop-tasks-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enowshop-tasks
+  template:
+    metadata:
+      labels:
+        app: enowshop-tasks
+    spec:
+      containers:
+        - name: enowshop-tasks
+          image: gcr.io/enowhop/enowshop-tasks:4
+          ports:
+              - containerPort: 8081
+          env:
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: etasks-secrets
+                  key: REDIS_HOST
+            - name: REDIS_USER
+              valueFrom:
+                secretKeyRef:
+                  name: etasks-secrets
+                  key: REDIS_USER
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: etasks-secrets
+                  key: REDIS_PASSWORD
+            - name: ORDER_API_URL
+              valueFrom:
+                secretKeyRef:
+                  name: etasks-secrets
+                  key: ORDER_API_URL
